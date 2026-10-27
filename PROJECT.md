@@ -1,0 +1,35 @@
+# Gorro
+
+This file is public. Do not include personal context, private goals, names of
+people from the vault, health information, private decisions, or local vault
+paths.
+
+**Last updated:** 2026-10-26  
+**Status:** active  
+**Type:** web
+
+## Goal
+
+A page where someone uploads a logo and downloads it dressed for October 31.
+Halloween gets a witch hat, a broom, or a pumpkin. The Peruvian flag gets a
+clay pot, a guitar, or a bow, for Día de la Canción Criolla.
+
+## Done when
+
+- A person can upload a logo, switch between Calabaza and Perú, pick one
+  accessory, and download a transparent PNG.
+
+## Current state
+
+The dressing happens in the browser. The page has a title, description,
+canonical URL, sitemap, robots file, Open Graph image, and a five-second
+Open Graph video.
+
+## Next action
+
+Put the page on a public URL so the share tags resolve.
+
+## Links
+
+- Production:
+- Documentation:

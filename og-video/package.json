@@ -1,0 +1,18 @@
+{
+  "name": "gorro-og-video",
+  "private": true,
+  "scripts": {
+    "render": "remotion render src/index.ts Gorro ../public/og/landing.mp4 --codec=h264 --crf=28"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.539",
+    "@remotion/google-fonts": "4.0.539",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.539"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.7",
+    "typescript": "5.9.3"
+  }
+}
