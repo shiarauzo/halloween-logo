@@ -10,14 +10,13 @@ paths.
 
 ## Goal
 
-A page where someone uploads a logo and downloads it dressed for October 31.
-Halloween gets a witch hat, a broom, or a pumpkin. The Peruvian flag gets a
-clay pot, a guitar, or a bow, for Criollo Song Day.
+A page where someone uploads a logo, picks one of five Halloween styles, and
+converts it. The styles are a witch hat, a broom, a pumpkin, a bat, and a ghost.
 
 ## Done when
 
-- A person can upload a logo, switch between Pumpkin and Peru, pick one
-  accessory, and download a transparent PNG.
+- A person can upload a logo, pick one of five Halloween styles, convert it,
+  and download a transparent PNG.
 
 ## Current state
 

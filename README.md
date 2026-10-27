@@ -1,8 +1,8 @@
 # Halloween Logo
 
-Upload your brand logo and download it with an accessory for October 31.
+Upload your brand logo, pick a Halloween style, and convert it.
 
-Pumpkin: witch hat, broom, or pumpkin. Peru: clay pot, guitar, or bow, for Criollo Song Day.
+Styles: witch hat, broom, pumpkin, bat, or ghost.
 
 The file is a transparent PNG. Everything happens in the browser.
 

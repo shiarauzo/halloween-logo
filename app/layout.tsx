@@ -52,8 +52,8 @@ export const metadata: Metadata = {
     "halloween logo",
     "witch hat logo",
     "pumpkin logo",
-    "peruvian flag logo",
-    "criollo song day",
+    "bat logo",
+    "ghost logo",
     "custom logo",
   ],
   openGraph: {

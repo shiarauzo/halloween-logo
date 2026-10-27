@@ -76,10 +76,25 @@ const bow = `<svg xmlns="http://www.w3.org/2000/svg" width="220" height="180" vi
   <rect x="96" y="64" width="28" height="32" rx="8" fill="#1c1917" transform="rotate(8 110 80)"/>
 </svg>`;
 
+const bat = `<svg xmlns="http://www.w3.org/2000/svg" width="220" height="140" viewBox="0 0 220 140">
+  <path fill="#1c1917" d="M110 78c8-28 22-46 40-58 8 18 6 36-2 50 16-6 34-4 52 6-20 8-36 22-46 40-6-16-16-28-28-36-12 8-22 20-28 36-10-18-26-32-46-40 18-10 36-12 52-6-8-14-10-32-2-50 18 12 32 30 40 58z"/>
+  <circle cx="100" cy="88" r="5" fill="#c4551a"/>
+  <circle cx="120" cy="88" r="5" fill="#c4551a"/>
+</svg>`;
+
+const ghost = `<svg xmlns="http://www.w3.org/2000/svg" width="160" height="220" viewBox="0 0 160 220">
+  <path fill="#f7f4ef" stroke="#1c1917" stroke-width="8" d="M30 108c0-42 22-74 50-74s50 32 50 74v76l-16-18-17 18-17-18-17 18-17-18-16 18z"/>
+  <circle cx="62" cy="108" r="8" fill="#1c1917"/>
+  <circle cx="98" cy="108" r="8" fill="#1c1917"/>
+  <path d="M68 132c8 10 18 10 26 0" stroke="#1c1917" stroke-width="6" fill="none" stroke-linecap="round"/>
+</svg>`;
+
 export const DECORATIONS: Record<Accessory, Decoration> = {
   witch: { svg: witch },
   pumpkin: { svg: pumpkin },
   broom: { svg: broom },
+  bat: { svg: bat },
+  ghost: { svg: ghost },
   olla: { svg: olla },
   guitar: { svg: guitar },
   bow: { svg: bow },

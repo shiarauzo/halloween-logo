@@ -61,6 +61,19 @@ const SPECS: Record<Accessory, AboveSpec | SideSpec | CornerSpec> = {
     aspect: 300 / 140,
     gap: 0.08,
   },
+  bat: {
+    anchor: "above",
+    widthFraction: 0.92,
+    maxHeightTimes: 0.7,
+    aspect: 140 / 220,
+    overlap: 0.18,
+  },
+  ghost: {
+    anchor: "side",
+    heightFraction: 1.05,
+    aspect: 220 / 160,
+    gap: 0.1,
+  },
   olla: {
     anchor: "side",
     heightFraction: 0.84,

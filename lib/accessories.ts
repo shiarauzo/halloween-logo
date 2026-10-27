@@ -2,6 +2,8 @@ export const ACCESSORIES = [
   "witch",
   "broom",
   "pumpkin",
+  "bat",
+  "ghost",
   "olla",
   "guitar",
   "bow",
@@ -16,6 +18,8 @@ export const MODES = {
       { id: "witch", label: "Witch hat" },
       { id: "broom", label: "Broom" },
       { id: "pumpkin", label: "Pumpkin" },
+      { id: "bat", label: "Bat" },
+      { id: "ghost", label: "Ghost" },
     ],
   },
   criollo: {
