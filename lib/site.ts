@@ -1,6 +1,6 @@
 import { SITE_NAME } from "@/lib/copy";
 
-const PRODUCTION_FALLBACK = "https://gorro.vercel.app";
+const PRODUCTION_FALLBACK = "https://gorro-six.vercel.app";
 
 function resolveSiteUrl(): string {
   const explicit = process.env.NEXT_PUBLIC_SITE_URL;

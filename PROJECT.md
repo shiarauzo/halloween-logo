@@ -21,15 +21,15 @@ clay pot, a guitar, or a bow, for Día de la Canción Criolla.
 
 ## Current state
 
-The dressing happens in the browser. The page has a title, description,
-canonical URL, sitemap, robots file, Open Graph image, and a five-second
-Open Graph video.
+The dressing happens in the browser. The page is live, with a title,
+description, canonical URL, sitemap, robots file, Open Graph image, and a
+five-second Open Graph video.
 
 ## Next action
 
-Put the page on a public URL so the share tags resolve.
+Try it with one real logo and see which accessory people keep.
 
 ## Links
 
-- Production:
-- Documentation:
+- Production: https://gorro-six.vercel.app
+- Documentation: https://github.com/shiarauzo/gorro
