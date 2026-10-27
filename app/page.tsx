@@ -1,3 +1,4 @@
+import { LogoMark } from "@/components/logo";
 import { Studio } from "@/components/studio";
 import { DATE_LABEL, HEADLINE, LEAD, SITE_NAME } from "@/lib/copy";
 
@@ -15,7 +16,11 @@ export default function Home() {
         className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-6 py-16 sm:py-24"
       >
         <header className="max-w-xl">
-          <p className="font-display text-lg" translate="no">
+          <p
+            className="flex items-center gap-2 font-display text-lg"
+            translate="no"
+          >
+            <LogoMark className="size-6" />
             {SITE_NAME}
           </p>
           <p className="mt-8 text-sm text-muted-foreground">{DATE_LABEL}</p>
