@@ -51,6 +51,14 @@
 
 :root {
   color-scheme: light;
+  --shadow-border:
+    0px 0px 0px 1px rgba(0, 0, 0, 0.06),
+    0px 1px 2px -1px rgba(0, 0, 0, 0.06),
+    0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+  --shadow-border-strong:
+    0px 0px 0px 1px rgba(0, 0, 0, 0.08),
+    0px 1px 2px -1px rgba(0, 0, 0, 0.08),
+    0px 2px 4px 0px rgba(0, 0, 0, 0.06);
   --background: #f6f3ee;
   --foreground: #1c1917;
   --card: #fffcf8;
@@ -119,6 +127,17 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+.surface {
+  box-shadow: var(--shadow-border);
+  transition-property: box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.surface-strong {
+  box-shadow: var(--shadow-border-strong);
+}
+
 .checker {
   background-color: #fffcf8;
   background-image:
@@ -143,5 +162,12 @@
   }
   html {
     @apply font-sans;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .surface {
+      transition: none;
+    }
   }
 }

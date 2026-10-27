@@ -90,7 +90,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="es"
-      className={`${geistSans.variable} ${newsreader.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${newsreader.variable} h-full touch-manipulation antialiased`}
     >
       <body className="flex min-h-dvh flex-col">
         {children}

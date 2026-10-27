@@ -24,7 +24,11 @@ export function Studio() {
   const [mode, setMode] = useState<Mode>("halloween");
   const [accessory, setAccessory] = useState<Accessory>("witch");
   const [logo, setLogo] = useState<HTMLImageElement | null>(null);
-  const [preview, setPreview] = useState<string | null>(null);
+  const [preview, setPreview] = useState<{
+    url: string;
+    width: number;
+    height: number;
+  } | null>(null);
   const [dragging, setDragging] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const sampleRef = useRef<HTMLCanvasElement | null>(null);
@@ -54,7 +58,7 @@ export function Studio() {
         }
         if (previewRef.current) URL.revokeObjectURL(previewRef.current);
         previewRef.current = url;
-        setPreview(url);
+        setPreview({ url, width: canvas.width, height: canvas.height });
         setError(null);
       })
       .catch((reason: unknown) => {
@@ -105,7 +109,7 @@ export function Studio() {
       : "Ejemplo. Sube el logo de tu marca.";
 
   return (
-    <div className="mt-10 flex flex-col gap-5">
+    <div id="estudio" className="mt-10 flex flex-col gap-5">
       <ToggleGroup
         aria-label="Fiesta"
         value={[mode]}
@@ -114,11 +118,11 @@ export function Studio() {
         variant="outline"
         className="border bg-card"
       >
-        <ToggleGroupItem value="halloween" className={PRESSED}>
+        <ToggleGroupItem value="halloween" className={cn(PRESSED, "pl-2.5 pr-3")}>
           <PumpkinMark />
           Calabaza
         </ToggleGroupItem>
-        <ToggleGroupItem value="criollo" className={PRESSED}>
+        <ToggleGroupItem value="criollo" className={cn(PRESSED, "pl-2.5 pr-3")}>
           <PeruFlag />
           Perú
         </ToggleGroupItem>
@@ -126,8 +130,8 @@ export function Studio() {
 
       <div
         className={cn(
-          "checker flex min-h-80 items-center justify-center rounded-xl border p-6 sm:p-10",
-          dragging && "border-foreground",
+          "checker surface flex min-h-80 items-center justify-center rounded-xl p-6 sm:p-10",
+          dragging && "surface-strong select-none",
         )}
         onDragEnter={(event) => {
           event.preventDefault();
@@ -145,16 +149,18 @@ export function Studio() {
         }}
       >
         {preview ? (
-          // Blob preview of the composited logo. next/image cannot take this URL.
+          // next/image rejects blob URLs, so the composited PNG stays a plain img.
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={preview}
+            src={preview.url}
+            width={preview.width}
+            height={preview.height}
             alt={
               logo
                 ? `Tu logo con ${accessoryLabel(accessory).toLowerCase()}`
                 : `Ejemplo con ${accessoryLabel(accessory).toLowerCase()}`
             }
-            className="max-h-80 w-auto max-w-full"
+            className="max-h-80 w-auto max-w-full outline -outline-offset-1 outline-black/10"
           />
         ) : (
           <div className="size-40 rounded-md bg-muted" />
@@ -163,7 +169,7 @@ export function Studio() {
 
       {preview ? (
         <a
-          href={preview}
+          href={preview.url}
           download="gorro.png"
           className={cn(buttonVariants({ size: "lg" }), "h-10 w-fit px-4")}
         >
@@ -196,6 +202,7 @@ export function Studio() {
           {logo ? "Cambiar logo" : "Sube tu logo"}
           <input
             type="file"
+            name="logo"
             accept="image/png,image/jpeg,image/webp,image/svg+xml,.svg"
             className="sr-only"
             onChange={(event) => {
@@ -207,7 +214,11 @@ export function Studio() {
         </label>
       </div>
 
-      {error ? <p className="text-sm text-destructive">{error}</p> : null}
+      {error ? (
+        <p className="text-sm text-destructive" aria-live="polite">
+          {error}
+        </p>
+      ) : null}
       <p className="text-sm text-pretty text-muted-foreground">{caption}</p>
     </div>
   );
