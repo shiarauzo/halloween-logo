@@ -170,7 +170,7 @@ export function Studio() {
       {preview ? (
         <a
           href={preview.url}
-          download="gorro.png"
+          download="halloween-logo.png"
           className={cn(buttonVariants({ size: "lg" }), "h-10 w-fit px-4")}
         >
           Descargar

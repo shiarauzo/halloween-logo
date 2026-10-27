@@ -1,4 +1,4 @@
-# Gorro
+# Halloween Logo
 
 Sube el logo de tu marca y descárgalo con un accesorio para el 31 de octubre.
 

@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
-import { HEADLINE, SITE_NAME } from "@/lib/copy";
+import { HEADLINE, SITE_NAME, TITLE } from "@/lib/copy";
 
-export const alt = "Gorro. Tu logo para el 31";
+export const alt = TITLE;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

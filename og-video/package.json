@@ -1,5 +1,5 @@
 {
-  "name": "gorro-og-video",
+  "name": "halloween-logo-og-video",
   "private": true,
   "scripts": {
     "render": "remotion render src/index.ts Gorro ../public/og/landing.mp4 --codec=h264 --crf=28"

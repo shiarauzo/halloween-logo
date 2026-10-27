@@ -100,7 +100,7 @@ export const GorroVideo: React.FC = () => {
       }}
     >
       <div style={{ position: "absolute", top: 64, left: 80, fontSize: 36 }}>
-        Gorro
+        Halloween Logo
       </div>
       <div
         style={{

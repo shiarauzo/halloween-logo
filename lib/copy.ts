@@ -1,6 +1,6 @@
-export const SITE_NAME = "Gorro";
+export const SITE_NAME = "Halloween Logo";
 
-export const TITLE = "Gorro. Tu logo para el 31";
+export const TITLE = "Halloween Logo. Tu logo para el 31";
 
 export const DESCRIPTION =
   "Sube el logo de tu marca y descárgalo con un gorro de bruja, una escoba o una calabaza. Con la bandera del Perú, una olla de barro por el Día de la Canción Criolla.";

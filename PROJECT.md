@@ -1,10 +1,10 @@
-# Gorro
+# Halloween Logo
 
 This file is public. Do not include personal context, private goals, names of
 people from the vault, health information, private decisions, or local vault
 paths.
 
-**Last updated:** 2026-10-26  
+**Last updated:** 2026-10-27  
 **Status:** active  
 **Type:** web
 
@@ -32,4 +32,4 @@ Try it with one real logo and see which accessory people keep.
 ## Links
 
 - Production: https://gorro-six.vercel.app
-- Documentation: https://github.com/shiarauzo/gorro
+- Documentation: https://github.com/shiarauzo/halloween-logo
