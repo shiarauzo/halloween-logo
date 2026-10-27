@@ -4,7 +4,7 @@ export function makeSampleLogo(): HTMLCanvasElement {
   canvas.width = size;
   canvas.height = size;
   const ctx = canvas.getContext("2d");
-  if (!ctx) throw new Error("No pude preparar el ejemplo.");
+  if (!ctx) throw new Error("Could not prepare the sample.");
 
   ctx.strokeStyle = "#1c1917";
   ctx.lineWidth = 28;
@@ -20,6 +20,6 @@ export function makeSampleLogo(): HTMLCanvasElement {
   ctx.font = "500 96px Georgia, serif";
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
-  ctx.fillText("norte", size / 2, 500);
+  ctx.fillText("north", size / 2, 500);
   return canvas;
 }

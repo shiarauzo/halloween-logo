@@ -2,7 +2,7 @@
   "name": "halloween-logo-og-video",
   "private": true,
   "scripts": {
-    "render": "remotion render src/index.ts Gorro ../public/og/landing.mp4 --codec=h264 --crf=28"
+    "render": "remotion render src/index.ts Landing ../public/og/landing.mp4 --codec=h264 --crf=28"
   },
   "dependencies": {
     "@remotion/cli": "4.0.539",

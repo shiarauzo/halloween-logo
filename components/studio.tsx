@@ -46,7 +46,7 @@ export function Studio() {
         const url = await new Promise<string>((resolve, reject) => {
           canvas.toBlob((blob) => {
             if (!blob) {
-              reject(new Error("No pude exportar el logo."));
+              reject(new Error("Could not export the logo."));
               return;
             }
             resolve(URL.createObjectURL(blob));
@@ -63,7 +63,7 @@ export function Studio() {
       })
       .catch((reason: unknown) => {
         if (cancelled) return;
-        setError(reason instanceof Error ? reason.message : "No pude armar el logo.");
+        setError(reason instanceof Error ? reason.message : "Could not build the logo.");
       });
 
     return () => {
@@ -84,7 +84,7 @@ export function Studio() {
       setLogo(image);
       setError(null);
     } catch (reason: unknown) {
-      setError(reason instanceof Error ? reason.message : "No pude leer esa imagen.");
+      setError(reason instanceof Error ? reason.message : "Could not read that image.");
     }
   }
 
@@ -103,15 +103,15 @@ export function Studio() {
 
   const options = MODES[mode].accessories;
   const caption = dragging
-    ? "Suelta tu logo"
+    ? "Drop your logo"
     : logo
-      ? "PNG con fondo transparente."
-      : "Ejemplo. Sube el logo de tu marca.";
+      ? "Transparent PNG."
+      : "Sample. Upload your brand logo.";
 
   return (
-    <div id="estudio" className="mt-10 flex flex-col gap-5">
+    <div id="studio" className="mt-10 flex flex-col gap-5">
       <ToggleGroup
-        aria-label="Fiesta"
+        aria-label="Look"
         value={[mode]}
         onValueChange={selectMode}
         spacing={0}
@@ -120,11 +120,11 @@ export function Studio() {
       >
         <ToggleGroupItem value="halloween" className={cn(PRESSED, "pl-2.5 pr-3")}>
           <PumpkinMark />
-          Calabaza
+          {MODES.halloween.label}
         </ToggleGroupItem>
         <ToggleGroupItem value="criollo" className={cn(PRESSED, "pl-2.5 pr-3")}>
           <PeruFlag />
-          Perú
+          {MODES.criollo.label}
         </ToggleGroupItem>
       </ToggleGroup>
 
@@ -157,8 +157,8 @@ export function Studio() {
             height={preview.height}
             alt={
               logo
-                ? `Tu logo con ${accessoryLabel(accessory).toLowerCase()}`
-                : `Ejemplo con ${accessoryLabel(accessory).toLowerCase()}`
+                ? `Your logo with a ${accessoryLabel(accessory).toLowerCase()}`
+                : `Sample with a ${accessoryLabel(accessory).toLowerCase()}`
             }
             className="max-h-80 w-auto max-w-full outline -outline-offset-1 outline-black/10"
           />
@@ -173,17 +173,17 @@ export function Studio() {
           download="halloween-logo.png"
           className={cn(buttonVariants({ size: "lg" }), "h-10 w-fit px-4")}
         >
-          Descargar
+          Download
         </a>
       ) : (
         <Button type="button" size="lg" className="h-10 w-fit px-4" disabled>
-          Descargar
+          Download
         </Button>
       )}
 
       <ToggleGroup
         key={mode}
-        aria-label="Accesorio"
+        aria-label="Accessory"
         value={[accessory]}
         onValueChange={selectAccessory}
         spacing={2}
@@ -199,7 +199,7 @@ export function Studio() {
 
       <div className="flex flex-wrap gap-2">
         <label className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-10 cursor-pointer px-3.5")}>
-          {logo ? "Cambiar logo" : "Sube tu logo"}
+          {logo ? "Change logo" : "Upload your logo"}
           <input
             type="file"
             name="logo"

@@ -15,7 +15,7 @@ function canvasContext(
   canvas.width = width;
   canvas.height = height;
   const ctx = canvas.getContext("2d", read ? { willReadFrequently: true } : undefined);
-  if (!ctx) throw new Error("No pude preparar el lienzo.");
+  if (!ctx) throw new Error("Could not prepare the canvas.");
   return { canvas, ctx };
 }
 
@@ -27,7 +27,7 @@ function loadSvg(svg: string): Promise<{ image: HTMLImageElement; url: string }>
     image.onload = () => resolve({ image, url });
     image.onerror = () => {
       URL.revokeObjectURL(url);
-      reject(new Error("No pude dibujar el accesorio."));
+      reject(new Error("Could not draw the accessory."));
     };
     image.src = url;
   });
@@ -86,10 +86,10 @@ export function readLogo(file: File): Promise<HTMLImageElement> {
   const name = file.name.toLowerCase();
   const isImage = file.type.startsWith("image/") || name.endsWith(".svg");
   if (!isImage) {
-    return Promise.reject(new Error("Sube un PNG, JPG, WEBP o SVG."));
+    return Promise.reject(new Error("Upload a PNG, JPG, WEBP, or SVG."));
   }
   if (file.size > 8 * 1024 * 1024) {
-    return Promise.reject(new Error("El archivo pasa de 8 MB."));
+    return Promise.reject(new Error("That file is over 8 MB. Use a smaller one."));
   }
 
   const url = URL.createObjectURL(file);
@@ -98,14 +98,14 @@ export function readLogo(file: File): Promise<HTMLImageElement> {
     image.onload = () => {
       URL.revokeObjectURL(url);
       if (!image.naturalWidth || !image.naturalHeight) {
-        reject(new Error("No pude leer esa imagen."));
+        reject(new Error("Could not read that image."));
         return;
       }
       resolve(image);
     };
     image.onerror = () => {
       URL.revokeObjectURL(url);
-      reject(new Error("No pude leer esa imagen."));
+      reject(new Error("Could not read that image."));
     };
     image.src = url;
   });

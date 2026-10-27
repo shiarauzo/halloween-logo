@@ -27,7 +27,7 @@ const jsonLd = {
   description: DESCRIPTION,
   applicationCategory: "DesignApplication",
   operatingSystem: "Any",
-  inLanguage: "es",
+  inLanguage: "en",
   offers: {
     "@type": "Offer",
     price: "0",
@@ -49,16 +49,17 @@ export const metadata: Metadata = {
   creator: "Shiara Arauzo",
   alternates: { canonical: "/" },
   keywords: [
-    "logo halloween",
-    "logo día de la canción criolla",
-    "gorro de bruja",
-    "olla de barro",
-    "logo personalizado",
+    "halloween logo",
+    "witch hat logo",
+    "pumpkin logo",
+    "peruvian flag logo",
+    "criollo song day",
+    "custom logo",
   ],
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
-    locale: "es_PE",
+    locale: "en_US",
     type: "website",
     url: "/",
     siteName: SITE_NAME,
@@ -89,7 +90,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="es"
+      lang="en"
       className={`${geistSans.variable} ${newsreader.variable} h-full touch-manipulation antialiased`}
     >
       <body className="flex min-h-dvh flex-col">

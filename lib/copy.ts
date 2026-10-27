@@ -1,11 +1,13 @@
 export const SITE_NAME = "Halloween Logo";
 
-export const TITLE = "Halloween Logo. Tu logo para el 31";
+export const TITLE = "Halloween Logo. Your logo for October 31";
 
 export const DESCRIPTION =
-  "Sube el logo de tu marca y descárgalo con un gorro de bruja, una escoba o una calabaza. Con la bandera del Perú, una olla de barro por el Día de la Canción Criolla.";
+  "Upload your logo and download it with a witch hat, a broom, or a pumpkin. The Peruvian flag adds a clay pot for Criollo Song Day.";
 
-export const HEADLINE = "Tu logo, de fiesta.";
+export const DATE_LABEL = "October 31";
+
+export const HEADLINE = "Your logo, dressed up.";
 
 export const LEAD =
-  "Súbelo y elige cómo sale: gorro de bruja, escoba o calabaza. Con la bandera del Perú, una olla de barro al lado.";
+  "Upload it and pick a look. A witch hat, a broom, or a pumpkin. The Peruvian flag puts a clay pot beside it.";

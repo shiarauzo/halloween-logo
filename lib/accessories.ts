@@ -11,19 +11,19 @@ export type Accessory = (typeof ACCESSORIES)[number];
 
 export const MODES = {
   halloween: {
-    label: "Calabaza",
+    label: "Pumpkin",
     accessories: [
-      { id: "witch", label: "Gorro de bruja" },
-      { id: "broom", label: "Escoba" },
-      { id: "pumpkin", label: "Calabaza" },
+      { id: "witch", label: "Witch hat" },
+      { id: "broom", label: "Broom" },
+      { id: "pumpkin", label: "Pumpkin" },
     ],
   },
   criollo: {
-    label: "Perú",
+    label: "Peru",
     accessories: [
-      { id: "olla", label: "Olla de barro" },
-      { id: "guitar", label: "Guitarra" },
-      { id: "bow", label: "Moño" },
+      { id: "olla", label: "Clay pot" },
+      { id: "guitar", label: "Guitar" },
+      { id: "bow", label: "Bow" },
     ],
   },
 } as const;
@@ -47,5 +47,5 @@ export function accessoryLabel(accessory: Accessory): string {
     const match = mode.accessories.find((item) => item.id === accessory);
     if (match) return match.label;
   }
-  return "Accesorio";
+  return "Accessory";
 }

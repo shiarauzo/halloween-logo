@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { HEADLINE, SITE_NAME, TITLE } from "@/lib/copy";
+import { DATE_LABEL, HEADLINE, SITE_NAME, TITLE } from "@/lib/copy";
 
 export const alt = TITLE;
 export const size = { width: 1200, height: 630 };
@@ -24,7 +24,7 @@ export default function OpenGraphImage() {
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 84, lineHeight: 1.05 }}>{HEADLINE}</div>
           <div style={{ marginTop: 28, fontSize: 32, color: "#78716c" }}>
-            31 de octubre
+            {DATE_LABEL}
           </div>
         </div>
       </div>

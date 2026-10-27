@@ -62,7 +62,7 @@ function ClayPot() {
   );
 }
 
-export const GorroVideo: React.FC = () => {
+export const LandingVideo: React.FC = () => {
   const frame = useCurrentFrame();
   const logoOpacity = interpolate(frame, [0, 12], [0, 1], {
     extrapolateLeft: "clamp",
@@ -132,7 +132,7 @@ export const GorroVideo: React.FC = () => {
               lineHeight: 1,
             }}
           >
-            MARCA
+            LOGO
           </div>
         </div>
         <div style={{ opacity: potOpacity, transform: `translateX(${potX}px)` }}>
@@ -148,7 +148,7 @@ export const GorroVideo: React.FC = () => {
           opacity: captionOpacity,
         }}
       >
-        Tu logo, de fiesta.
+        Your logo, dressed up.
       </div>
     </AbsoluteFill>
   );

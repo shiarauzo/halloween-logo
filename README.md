@@ -1,10 +1,10 @@
 # Halloween Logo
 
-Sube el logo de tu marca y descárgalo con un accesorio para el 31 de octubre.
+Upload your brand logo and download it with an accessory for October 31.
 
-Calabaza: gorro de bruja, escoba o calabaza. Perú: olla de barro, guitarra o moño, por el Día de la Canción Criolla.
+Pumpkin: witch hat, broom, or pumpkin. Peru: clay pot, guitar, or bow, for Criollo Song Day.
 
-El archivo sale en PNG con fondo transparente. Todo pasa en el navegador.
+The file is a transparent PNG. Everything happens in the browser.
 
 ```bash
 bun install
@@ -13,7 +13,7 @@ bun dev
 
 ## Open Graph
 
-El video de `public/og/landing.mp4` se renderiza desde `og-video/`:
+The video at `public/og/landing.mp4` renders from `og-video/`:
 
 ```bash
 cd og-video

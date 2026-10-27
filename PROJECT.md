@@ -12,11 +12,11 @@ paths.
 
 A page where someone uploads a logo and downloads it dressed for October 31.
 Halloween gets a witch hat, a broom, or a pumpkin. The Peruvian flag gets a
-clay pot, a guitar, or a bow, for Día de la Canción Criolla.
+clay pot, a guitar, or a bow, for Criollo Song Day.
 
 ## Done when
 
-- A person can upload a logo, switch between Calabaza and Perú, pick one
+- A person can upload a logo, switch between Pumpkin and Peru, pick one
   accessory, and download a transparent PNG.
 
 ## Current state
