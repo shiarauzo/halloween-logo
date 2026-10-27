@@ -25,10 +25,8 @@ export function Studio() {
   const [accessory, setAccessory] = useState<Accessory>("witch");
   const [logo, setLogo] = useState<HTMLImageElement | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
-  const [ready, setReady] = useState(false);
   const [dragging, setDragging] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const sampleRef = useRef<HTMLCanvasElement | null>(null);
   const previewRef = useRef<string | null>(null);
 
@@ -56,14 +54,11 @@ export function Studio() {
         }
         if (previewRef.current) URL.revokeObjectURL(previewRef.current);
         previewRef.current = url;
-        canvasRef.current = canvas;
         setPreview(url);
-        setReady(true);
         setError(null);
       })
       .catch((reason: unknown) => {
         if (cancelled) return;
-        setReady(false);
         setError(reason instanceof Error ? reason.message : "No pude armar el logo.");
       });
 
@@ -100,15 +95,6 @@ export function Studio() {
     const value = next.at(-1);
     if (!value || !isAccessory(value)) return;
     setAccessory(value);
-  }
-
-  function download() {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const link = document.createElement("a");
-    link.href = canvas.toDataURL("image/png");
-    link.download = "gorro.png";
-    link.click();
   }
 
   const options = MODES[mode].accessories;
@@ -175,6 +161,20 @@ export function Studio() {
         )}
       </div>
 
+      {preview ? (
+        <a
+          href={preview}
+          download="gorro.png"
+          className={cn(buttonVariants({ size: "lg" }), "h-10 w-fit px-4")}
+        >
+          Descargar
+        </a>
+      ) : (
+        <Button type="button" size="lg" className="h-10 w-fit px-4" disabled>
+          Descargar
+        </Button>
+      )}
+
       <ToggleGroup
         key={mode}
         aria-label="Accesorio"
@@ -205,9 +205,6 @@ export function Studio() {
             }}
           />
         </label>
-        <Button type="button" size="lg" className="h-10 px-3.5" disabled={!ready} onClick={download}>
-          Descargar
-        </Button>
       </div>
 
       {error ? <p className="text-sm text-destructive">{error}</p> : null}
