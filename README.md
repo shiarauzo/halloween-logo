@@ -4,7 +4,9 @@ Upload your brand logo, pick a Halloween style, and convert it.
 
 Styles: witch hat, broom, pumpkin, bat, or ghost.
 
-The file is a transparent PNG. Everything happens in the browser.
+Everything happens in the browser. The downloaded file is a PNG. Transparency
+from an original PNG, WEBP, or SVG stays intact. Opaque image backgrounds, such
+as a JPG background, stay opaque.
 
 ```bash
 bun install
